@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+    dbsharding:
+        image: citusdata/citus
+        container_name: postgres-shard
+        environment:
+            - POSTGRES_DB=onlineshop
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=secret
+        ports:
+            - "5000:5432"
+        volumes:
+            - ./pgdata:/var/lib/postgresql/data
+            - ./init.sql:/docker-entrypoint-initdb.d/init.sql
