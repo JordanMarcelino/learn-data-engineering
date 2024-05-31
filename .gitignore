@@ -78,6 +78,7 @@ target/
 /data/
 logs/
 accountKey.json
+.env 
 
 # Mac OS-specific storage files
 .DS_Store
